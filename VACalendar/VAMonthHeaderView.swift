@@ -112,6 +112,7 @@ extension VAMonthHeaderView: VACalendarMonthDelegate {
     
     public func monthDidChange(_ currentMonth: Date) {
         monthLabel.text = dateFormatter.string(from: currentMonth)
+                NotificationCenter.default.post(name: NSNotification.Name(rawValue: "MonthChanged"), object: currentMonth)
     }
     
 }
